@@ -1,20 +1,24 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "MockPowersoftServer",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v13)
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
+		.package(name: "PowersoftKit", path: "../PowersoftKit"),
+		.package(name: "PowersoftClient", path: "../PowersoftClient"),
     ],
     targets: [
         .target(
             name: "App",
             dependencies: [
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+				.product(name: "PowersoftKit", package: "PowersoftKit"),
+				.product(name: "PowersoftClient", package: "PowersoftClient"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

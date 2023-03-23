@@ -1,4 +1,3 @@
-import PowersoftClient
 import PowersoftKit
 
 public actor MockPowersoftStore{
@@ -105,7 +104,7 @@ public actor MockPowersoftStore{
 	}
 	
 	public func getStocksPage(page: Int) async -> [PSListStockStoresItem]? {
-		return await allStocks.getPaginatedSlice(pageNumber: page, pageSize: pageCapacity)
+		return allStocks.getPaginatedSlice(pageNumber: page, pageSize: pageCapacity)
 	}
 	
 	public func getAllStocks() async -> [PSListStockStoresItem]? {

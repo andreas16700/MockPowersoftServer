@@ -37,12 +37,12 @@
       }
     },
     {
-      "identity" : "ratelimitingcommunicator",
+      "identity" : "powersoftkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/andreas16700/RateLimitingCommunicator.git",
+      "location" : "https://github.com/andreas16700/PowersoftKit",
       "state" : {
         "branch" : "main",
-        "revision" : "3a63502c1ab6874888fcbc9d5c20e2c6607cc8f1"
+        "revision" : "a6c78c5fc27fac5748a7a3165b38f674430415f5"
       }
     },
     {

@@ -9,16 +9,14 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-		.package(name: "PowersoftKit", path: "../PowersoftKit"),
-		.package(name: "PowersoftClient", path: "../PowersoftClient"),
+		.package(url: "https://github.com/andreas16700/PowersoftKit", branch: "main")
     ],
     targets: [
         .target(
             name: "App",
             dependencies: [
                 .product(name: "Vapor", package: "vapor"),
-				.product(name: "PowersoftKit", package: "PowersoftKit"),
-				.product(name: "PowersoftClient", package: "PowersoftClient"),
+				.product(name: "PowersoftKit", package: "PowersoftKit")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

@@ -139,6 +139,10 @@ func routes(_ app: Application) throws {
 		let m = await store.modelItemsByModelCode
 		return m
 	}
+	app.get("allModelCodes"){req async throws -> [String] in
+		let a = await store.allModelsMetadata.map(\.modelCode365)
+		return a
+	}
 }
 var store = MockPowersoftStore(models: .init(), modelsMetadata: .init(), stockByItemCode: .init())
 func decodeToType<T: Decodable>(_ b: ByteBuffer?, to type: T.Type)throws ->T?{

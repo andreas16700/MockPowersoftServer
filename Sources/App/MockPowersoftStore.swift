@@ -31,9 +31,9 @@ public actor MockPowersoftStore{
 		return Array(stockByItemCode.values)
 	}
 	public func resetAll(){
-		self.modelItemsByModelCode = .init()
-		self.modelsMetadataByModelCode = .init()
-		self.stockByItemCode = .init()
+		self.modelItemsByModelCode.removeAll(keepingCapacity: true)
+		self.modelsMetadataByModelCode.removeAll(keepingCapacity: true)
+		self.stockByItemCode.removeAll(keepingCapacity: true)
 	}
 	public func addNewModel(modelCode: String, model: [PSItem], usingPRNG prng: inout RandomNumberGenerator){
 		guard let anItem = model.randomElement() else {return}
